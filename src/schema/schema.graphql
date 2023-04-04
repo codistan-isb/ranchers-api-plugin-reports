@@ -1,0 +1,39 @@
+type Report {
+  posOrderId: String!
+  riderName: String!
+  cityName: String!
+  branchName: String!
+  orderReportStatus: String!
+  orderDeliveryTime: String!
+}
+
+type Mutation {
+  createReport(
+    posOrderId: String!
+    riderName: String!
+    cityName: String!
+    branchName: String!
+    orderReportStatus: String!
+    orderDeliveryTime: String!
+  ): Report!
+  updateReport(
+    posOrderId: String!
+    riderName: String
+    cityName: String
+    branchName: String
+    orderReportStatus: String
+    orderDeliveryTime: String
+  ): Report
+}
+type Query {
+  getAllReports: [Report!]!
+  # getReportByPosOrderId(posOrderId: String!): [Report]
+  getReports(
+    posOrderId: String
+    riderName: String
+    cityName: String
+    branchName: String
+    orderReportStatus: String
+    orderDeliveryTime: String
+  ): [Report!]!
+}
